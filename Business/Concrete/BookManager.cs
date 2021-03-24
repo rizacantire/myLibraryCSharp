@@ -56,5 +56,9 @@ namespace Business.Concrete
             _bookDal.Update(book);
             return new SuccessResult(Messages.BookUpdated);
         }
+         public IDataResult<List<BookDetailsDto>> GetBookDetailsByCategoryId(int categoryId)
+        {
+            return new SuccessDataResult<List<BookDetailsDto>>(_bookDal.GetBookDetails(b=>b.CategoryId == categoryId), Messages.BooksListed);
+        }
     }
 }
