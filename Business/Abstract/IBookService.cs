@@ -16,6 +16,7 @@ namespace Business.Abstract
         IResult Add(Book book);
         IResult Delete(Book book);
         IResult Update(Book book);
+        IDataResult<List<BookDetailsDto>> GetBookDetailsByCategoryId(int categoryId);
 
     }
 }
